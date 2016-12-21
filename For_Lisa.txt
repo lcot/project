@@ -1,0 +1,33 @@
+
+En gros, normalement y aura au final 8 fichiers:
+
+- 3 JSP
+	- LogIn.jsp : où on entre les identenfiants
+	- Process.jsp : où on peut sélectionner les actions sur la BDD + lien déconnection
+	- LogOut.jsp : où ya juste écrit au revoir + lien vers LogIn.jsp
+	
+- 1 Servlet
+	- Controller.java : où selon tels actions utilisateurs (envoie de <form>) 
+	tels traitements de l'EJB vont se déclencher (appels de fonctions de l'EJB)
+	
+- 1 EJB
+	- <ejb_name>.java : où les méthodes qu'appelle le Controller.java sont implémentées
+	
+	(Jean-Mi: "C'est là que se trouve la logique applicative de l'application")
+	
+	En gros cet EJB implémente des fonctions qui sont utilisées par notre projet "WebApplication"
+	(thin client) mais ces méthodes devraient aussi pouvoir être utilisées par d'autres 
+	projets comme une "JavaApplication" standard avec du Swing par exemple (fat client).
+	
+	Les méthodes doivent donc être assez génériques/modulaires pour pouvoir être utilisées
+	dans d'autres contextes (l'une des utilités des EJB: partage de fonctionalités)
+	
+- 1 interface
+	- <ejb_name_interface>.java : où les méthodes de l'EJB sont déclarées
+	
+- 2 entity beans 
+	- un pour chaque table dans la BDD (censé y ne avoir que 2: utilisateurs + attributs)
+	C'est un peu comme dans le PFE avec les classes pour mapper la base de données
+	
+	
+Voilà après le schéma que Pierre avait pris en photo est pas mal non plus pour comprendre :)
