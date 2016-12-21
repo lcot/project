@@ -15,5 +15,5 @@ import javax.ejb.Remote;
 public interface Bean {
 
     // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    // "Insert Code > Add Business Method aaaaaa
 }
